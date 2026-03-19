@@ -10,8 +10,7 @@ class Holocron
 {
     public function __construct(
         protected HistoryRecorder $recorder,
-    ) {
-    }
+    ) {}
 
     public function record(string $event): PendingHistoryEntry
     {

@@ -30,8 +30,7 @@ class PendingHistoryEntry
     protected function __construct(
         protected string $event,
         protected HistoryRecorder $recorder,
-    ) {
-    }
+    ) {}
 
     public static function forEvent(string $event, HistoryRecorder $recorder): self
     {

@@ -13,7 +13,7 @@ class HolocronServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/holocron.php', 'holocron');
 
-        $this->app->singleton(HistoryRecorder::class, fn (): HistoryRecorder => new HistoryRecorder());
+        $this->app->singleton(HistoryRecorder::class, fn (): HistoryRecorder => new HistoryRecorder);
         $this->app->singleton(Holocron::class, fn ($app): Holocron => new Holocron($app->make(HistoryRecorder::class)));
     }
 

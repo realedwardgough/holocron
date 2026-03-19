@@ -27,7 +27,7 @@ class HistoryRecorder
             throw new InvalidArgumentException('A Holocron history entry requires an event key.');
         }
 
-        $entry = new HolocronEntry();
+        $entry = new HolocronEntry;
 
         $entry->forceFill([
             'event' => $event,
