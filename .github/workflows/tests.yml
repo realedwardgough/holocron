@@ -54,7 +54,6 @@ jobs:
 
   pint:
     runs-on: ubuntu-latest
-
     name: Pint
 
     steps:
@@ -73,3 +72,14 @@ jobs:
 
       - name: Run Pint
         run: vendor/bin/pint --test
+
+  ci:
+    runs-on: ubuntu-latest
+    name: CI
+    needs:
+      - test
+      - pint
+
+    steps:
+      - name: CI passed
+        run: echo "All required checks passed."
